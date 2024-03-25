@@ -2,7 +2,7 @@ const express = require("express")
 const session = require("express-session")
 
 const app = express()
-// Enter session secret key as an argument
+// Enter session secret key as an argument, getting it somewhere else
 const secret = process.argv[2];
 app.use(express.urlencoded({ extended: false }))
 
@@ -10,6 +10,7 @@ app.use(
   session({
     secret: `${secret}`,
     cookie: {
+      // can't be change or access programticly  
         httpOnly: true,
         sameSite: true,
     },

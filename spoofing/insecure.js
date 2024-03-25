@@ -23,6 +23,7 @@ app.post("/sensitive", (req, res) => {
   }
 })
 
+//express section
 app.get("/", (req, res) => {
   let name = "Guest"
 
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
   </form>
   `)
 })
+
 
 app.post("/register", (req, res) => {
   // name = req.body.name.trim()
