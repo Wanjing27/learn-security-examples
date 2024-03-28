@@ -1,0 +1,9 @@
+Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability in this code lies in the session management mechanism, specifically regarding the session secret key handling. In the original implementation, the session secret key is hardcoded or not properly protected. This can lead to potential security risks, such as session hijacking or session fixation attacks, where an attacker could manipulate or guess the secret key to gain unauthorized access to the session data.
+
+In the secure version of the code, the session secret key is passed as an argument to the application using process.argv[2], which allows for dynamic assignment of the secret key. By doing this, the secret key is not exposed directly in the code, enhancing its security. This practice makes it harder for attackers to guess or manipulate the secret key, thus reducing the risk of session-related vulnerabilities.
+
+Which CIA property does tampering violate?
+
+Tampering violates the CIA property of Integrity. Tampering involves unauthorized modification or alteration of data, which compromises its accuracy and reliability. In this context, tampering with session data can lead to unauthorized access, data corruption, or manipulation, thereby violating the integrity of the system.
